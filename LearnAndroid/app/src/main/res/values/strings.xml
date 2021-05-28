@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LearnAndroid</string>
+    <string name="start_service">Start Service</string>
+    <string name="stop_service">Stop Service</string>
+    <string name="open_browser">Open Browser</string>
+    <string name="dial_phone">Dial Phone</string>
+</resources>

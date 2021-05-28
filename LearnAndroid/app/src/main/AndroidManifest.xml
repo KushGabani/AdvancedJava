@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.learnandroid">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LearnAndroid"
+        tools:ignore="AllowBackup">
+        <activity android:name=".LearnLinearLayout"></activity>
+        <activity android:name=".WorkingWithIntent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".BroadcastReceiver" />
+        <activity android:name=".AndroidLifeCycle" />
+        <activity android:name=".Services" />
+
+        <service android:name=".MyService" />
+
+        <receiver
+            android:name=".MyReceiver"
+            android:permission="TODO"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="com.learnandroid.custom_intent" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
