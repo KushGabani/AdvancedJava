@@ -11,14 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroid"
         tools:ignore="AllowBackup">
-        <activity android:name=".LearnLinearLayout"></activity>
-        <activity android:name=".WorkingWithIntent">
+        <activity android:name=".UIControls">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LearnLinearLayout" />
+        <activity android:name=".WorkingWithIntent" />
         <activity android:name=".BroadcastReceiver" />
         <activity android:name=".AndroidLifeCycle" />
         <activity android:name=".Services" />
