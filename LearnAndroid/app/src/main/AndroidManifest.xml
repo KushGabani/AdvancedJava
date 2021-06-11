@@ -11,6 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroid"
         tools:ignore="AllowBackup">
+        <activity android:name=".LearnTableLayout"></activity>
+        <activity android:name=".LearnRelativeLayout" />
         <activity android:name=".UIControls">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
