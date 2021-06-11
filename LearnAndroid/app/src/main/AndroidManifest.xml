@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroid"
         tools:ignore="AllowBackup">
+        <activity android:name=".SqlCrudOperations"></activity>
         <activity android:name=".LearnSharedPreferences">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
