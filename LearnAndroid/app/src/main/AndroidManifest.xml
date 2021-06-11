@@ -11,15 +11,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroid"
         tools:ignore="AllowBackup">
-        <activity android:name=".LearnTableLayout"></activity>
-        <activity android:name=".LearnRelativeLayout" />
-        <activity android:name=".UIControls">
+        <activity android:name=".LearnSharedPreferences">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LearnTableLayout" />
+        <activity android:name=".LearnRelativeLayout" />
+        <activity android:name=".UIControls" />
         <activity android:name=".LearnLinearLayout" />
         <activity android:name=".WorkingWithIntent" />
         <activity android:name=".BroadcastReceiver" />
