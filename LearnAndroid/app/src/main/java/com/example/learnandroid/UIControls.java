@@ -2,8 +2,10 @@ package com.example.learnandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -11,10 +13,11 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-public class UIControls extends AppCompatActivity {
+public class UIControls extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,5 +79,56 @@ public class UIControls extends AppCompatActivity {
                 Toast.makeText(UIControls.this, result, Toast.LENGTH_SHORT).show();
             }
         });
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner.setOnItemSelectedListener(this);
+        String[] categories = {
+                "Option 1",
+                "Option 2",
+                "Option 3",
+                "Option 4",
+                "Option 5",
+                "Option 6"
+        };
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, categories);
+        spinner.setAdapter(arrayAdapter);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String item = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(), item, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    public void download(View v) {
+        ProgressDialog progress = new ProgressDialog(this);
+        progress.setMessage("Downloading file...");
+        progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progress.setIndeterminate(true);
+        progress.setProgress(0);
+        progress.show();
+
+        final int totalProgressTime = 100;
+        final Thread thread = new Thread() {
+            @Override
+            public void run() {
+                int jumpTime = 0;
+                while(jumpTime < totalProgressTime) {
+                    try {
+                        sleep(200);
+                        jumpTime += 5;
+                        progress.setProgress(jumpTime);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        thread.start();
     }
 }
